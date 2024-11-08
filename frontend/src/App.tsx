@@ -4,12 +4,14 @@ import { AppBar, createTheme, Tabs, Tab, ThemeProvider, Box, Button } from '@mui
 import Home from './components/home/home';
 import About from './components/about/about';
 import Contact from './components/contact/contact';
+import Register from './components/register/Register';
+import Login from './components/login/Login';
 import './App.css';
 
 export const App = () => {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
   };
 
@@ -83,8 +85,11 @@ export const App = () => {
           <Box padding={3}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </Box>
         </div>
