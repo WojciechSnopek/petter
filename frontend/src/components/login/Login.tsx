@@ -1,17 +1,15 @@
-import React from 'react';
 import { Box, TextField, Button, Typography, Paper } from '@mui/material';
 import { BASE_URL } from '../../config';
 import { useNavigate } from 'react-router-dom';
+import {useState} from "react";
 
 //TODO: Add user context :-(
 //TODO: How not to run docker run every single time when I restart the server?
 
 const Login = () => {
-    const [username, setUsername] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
-    const JWTToken = localStorage.getItem('token');
 
     const loginUser = async (userData: any) => {
         console.log({userData})
